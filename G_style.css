@@ -1,0 +1,401 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #fff;
+    padding: 0.2em 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+#logo-image {
+    width: 140px; /* 设置图片的宽度为100像素 */
+    height: auto; /* 让图片的高度自动调整以保持比例 */
+    margin-top: 0; /* 上外边距 */
+    margin-bottom: 0; /* 下外边距 */
+    padding-top: 0; /* 上内边距 */
+    padding-bottom: 0; /* 下内边距 */
+}
+
+nav ul {
+    list-style-type: none; /* 移除列表样式 */
+    padding: 0; /* 移除列表内边距 */
+    margin: 0; /* 移除列表外边距 */
+    display: flex; /* 使导航条中的元素排列在一行 */
+    align-items: center; /* 垂直居中对齐 */
+}
+
+
+header nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.showcase {
+    position: relative;
+    text-align: center;
+    padding: 1em 0; /* Adjusted padding for more space */
+    background-color: #fff;
+}
+
+.text-background {
+    position: relative;
+    z-index: 1;
+}
+
+.background-text {
+    font-size: 9em; /* Adjust font size as needed */
+    color: #e0e0e0; /* Lighter color for background text */
+    position: absolute;
+    top: 25%; /* Centered vertically */
+    left: 50%; /* Centered horizontally */
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.showcase img {
+    width: 410px; /* Adjusted width */
+    transition: transform 1.5s ease;
+    position: relative;
+    z-index: 2;
+}
+
+.showcase img:hover {
+    transform: scale(1.7) rotate(5deg);
+}
+
+.text-overlay {
+    margin-top: 2em;
+}
+
+.text-overlay p {
+    margin: 0.5em 0;
+}
+
+.learn-more-btn {
+    display: inline-block;
+    padding: 0.5em 1em;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    margin-top: 1em;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.learn-more-btn:hover {
+    background-color: #555;
+}
+
+
+
+.container {
+    display: flex;
+    justify-content: space-between; /* Distribute space between navigation and tags */
+    align-items: flex-start; /* Align items at the start */
+    padding-right: 2em; /* Add space to the right */
+    padding-top: 50px;
+}
+
+.navigation {
+    list-style: none;
+    padding: 30;
+    margin: 0;
+    text-align: left;
+}
+
+.navigation li {
+    margin-bottom: 1em; /* Space between links */
+}
+
+.navigation a {
+    text-decoration: none;
+    color: #000;
+    font-size: 1em;
+    transition: background-color 0.4s ease, font-size 0.4s ease, font-weight 0.4s ease; /* Added font-size and font-weight transition */
+}
+
+.navigation a:hover {
+    color: #333;
+    font-size: 1.4em; /* Increase font size */
+    font-weight: bold; /* Make the font bold */
+}
+
+
+.tags {
+    display: flex;
+    justify-content: flex-end; /* Move to the right */
+    flex-wrap: wrap;
+}
+
+.tags button {
+    background-color: #fff;
+    border: 1px solid #333;
+    border-radius: 20px;
+    padding: 0.5em 1em;
+    margin: 0.1em;
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    transform: rotate(calc(var(--rotate, 0deg)));
+}
+
+.tags button:nth-child(1) {
+    --rotate: -10deg;
+}
+
+.tags button:nth-child(2) {
+    --rotate: 5deg;
+}
+
+.tags button:nth-child(3) {
+    --rotate: -5deg;
+}
+
+.tags button:nth-child(4) {
+    --rotate: 10deg;
+}
+
+.tags button:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+.overlay-section {
+    text-align: center; /* Center align the overlay section */
+    margin-top: 2em; /* Add space above the overlay section */
+}
+
+.text-overlay p {
+    font-size: 1.2em;
+    margin-bottom: 1em;
+}
+
+.learn-more-btn {
+    display: inline-block;
+    padding: 0.5em 1em;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+    margin-bottom: 50px;
+}
+
+.learn-more-btn:hover {
+    background-color: #555;
+}
+
+
+/*  主体部分 */
+
+
+.product-container {
+    display: flex;
+    width: 100%;
+    height: auto;
+    background-color: #f4f4f4;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    margin-left: 30px;
+    margin-top: 20px;
+    padding: 50px;
+}
+
+.sidebar {
+    width: 30%;
+    background-color: transparent;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-right: 20px;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    margin: 20px 0;
+    background-color: #fff;
+    border-radius: 25px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.item img {
+    width: 60px;
+    height: auto;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.item p {
+    margin: 20px;
+    font-size: 14px;
+    color: #333;
+    font-weight: bold;
+}
+
+.item:hover {
+    background-color: #e0e0e0;
+}
+
+
+/*  右边内容部分 */
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-color: #e7e7e7;
+    border-radius: 10% 0 0 10%;
+    transition: opacity 1.5s ease-in-out, transform 1.5s ease-in-out; /* 添加过渡效果 */
+    opacity: 0;
+    transform: translateX(100%);
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.main-content.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+.main-content.expanded {
+    width: 100%;
+    height: 100vh;
+    border-radius: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1000; /* 确保在最前面 */
+}
+
+
+.main-content.expanded .detail,
+.main-content.expanded .related-products {
+    display: none; /* 隐藏原来的内容 */
+}
+
+
+.new-content {
+    display: none; /* 初始状态下隐藏 */
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    width: 100%;
+    padding: 20px;
+    background-color: white;
+    box-sizing: border-box;
+    z-index: 1001; /* 确保新内容在原内容之上 */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#new-content-container {
+    margin-top: 20px;
+    position: relative;
+}
+
+.content-left {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.image-container {
+    position: relative;
+    width: 80%;
+    overflow: hidden;
+}
+
+.slide-image {
+    display: none;
+    width: 100%;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 1002;
+}
+
+.left-arrow {
+    left: 10px;
+}
+
+.right-arrow {
+    right: 10px;
+}
+
+.content-right {
+    flex: 1;
+    padding: 20px;
+}
+
+.back-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+
+
+.detail {
+    display: none; /* 初始状态下隐藏 */
+    margin-bottom: 20px;
+    width: 80%;
+}
+
+.detail img {
+    max-width: 400px;
+    margin-right: 20px;
+    float: left; /* 将图片浮动到左边 */
+}
+
+.text-content {
+    max-width: 400px;
+    overflow: hidden; /* 清除浮动 */
+}
+
+.related-products {
+    width: 80%;
+    text-align: center;
+    margin-top: 340px; /* 添加一些顶部边距 */
+}
+
+.related-products img {
+    display: block;
+    max-width: 100px;
+    margin: 10px;
+}
+
+.detail.active {
+    display: block; /* 当有.active类时，显示为block */
+}

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THIS IS THE WAY</title>
+    <link rel="stylesheet" href="G_style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <img src="pic/MTFBWY.png" id="logo-image">
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="showcase">
+            <div class="text-background">
+                <h2 class="background-text">THIS IS THE WAY</h2>
+                <img src="pic/HG.png" alt="Modern Chair" id="chair-image">
+            </div>
+
+        <div class="container">
+            <ul class="navigation">
+                <li><a href="#collections">Grogu's Collections</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+
+            <div class="tags">
+                <button>Food</button>
+                <button>Summer</button>
+                <button>Winter</button>
+                <button>Magic</button>
+            </div>
+        </div>
+    </section>
+
+    <div style="height: 50px;"></div>
+    
+
+<!-- 以上是header -->
+
+
+<!-- 左边选择栏 -->
+
+    <div class="product-container">
+        <div class="sidebar">
+            <div class="item" onclick="showDetail('A')">
+                <img src="pic/tea.png" alt="ABOUT FOOD">
+                <p>ABOUT FOOD</p>
+            </div>
+            <div class="item" onclick="showDetail('B')">
+                <img src="pic/see_frog.png" alt="ABOUT SUMMER">
+                <p>ABOUT SUMMER</p>
+            </div>
+            <div class="item" onclick="showDetail('C')">
+                <img src="pic/star_eyes.png" alt="ABOUT WINTER">
+                <p>ABOUT WINTER</p>
+            </div>
+            <div class="item" onclick="showDetail('D')">
+                <img src="pic/hug.png" alt="ABOUT MAGIC">
+                <p>ABOUT MAGIC</p>
+            </div>
+        </div>
+
+
+
+        <div class="main-content" id="main-content">
+            <div class="detail" id="detail-A" data-target="new-content-1">
+                <img src="pic/HG.png" alt="ABOUT FOOD">
+                <h2>ABOUT FOOD</h2>
+                <p>gugu with food</p>
+                <div class="related-products">
+                    <h3>gugu with food</h3>
+                    <div>
+                        <img src="pic/HG.png" alt="Producto relacionado 1">
+                        <img src="pic/HG.png" alt="Producto relacionado 2">
+                        <img src="pic/HG.png" alt="Producto relacionado 3">
+                        <img src="pic/HG.png" alt="Producto relacionado 4">
+                    </div>
+                </div>
+            </div>
+            <div class="detail" id="detail-B" data-target="new-content-2">
+                <img src="images/2.jpg" alt="ABOUT SUMMER">
+                <h2>ABOUT SUMMER</h2>
+                <p>gugu in summer</p>
+                <div class="related-products">
+                    <h3>gugu in summer</h3>
+                    <div>
+                        <img src="images/related1.jpg" alt="Producto relacionado 1">
+                        <img src="images/related2.jpg" alt="Producto relacionado 2">
+                        <img src="images/related3.jpg" alt="Producto relacionado 3">
+                        <img src="images/related4.jpg" alt="Producto relacionado 4">
+                    </div>
+                </div>
+            </div>
+            <div class="detail" id="detail-C" data-target="new-content-3">
+                <img src="images/3.jpg" alt="ABOUT WINTER">
+                <h2>ABOUT WINTER</h2>
+                <p>gugu in winter</p>
+                <div class="related-products">
+                    <h3>gugu in winter</h3>
+                    <div>
+                        <img src="images/related1.jpg" alt="Producto relacionado 1">
+                        <img src="images/related2.jpg" alt="Producto relacionado 2">
+                        <img src="images/related3.jpg" alt="Producto relacionado 3">
+                        <img src="images/related4.jpg" alt="Producto relacionado 4">
+                    </div>
+                </div>
+            </div>
+            <div class="detail" id="detail-D" data-target="new-content-4">
+                <img src="images/4.jpg" alt="ABOUT MAGIC">
+                <h2>ABOUT MAGIC</h2>
+                <p>gugu in Hogwarts</p>
+                <div class="related-products">
+                    <h3>gugu in Hogwarts</h3>
+                    <div>
+                        <img src="images/related1.jpg" alt="Producto relacionado 1">
+                        <img src="images/related2.jpg" alt="Producto relacionado 2">
+                        <img src="images/related3.jpg" alt="Producto relacionado 3">
+                        <img src="images/related4.jpg" alt="Producto relacionado 4">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+
+<div id="new-content-container">
+    <div class="new-content" id="new-content-1">
+    <h2>New Content 1</h2>
+        <div class="content-left">
+            <div class="image-container">
+                <img src="pic/HG.png" class="slide-image" alt="Image 1">
+                <img src="pic/hug_forg.png" class="slide-image" alt="Image 2">
+                <img src="pic/see_frog.png" class="slide-image" alt="Image 3">
+            </div>
+            <div class="arrow left-arrow" onclick="prevImage()">&#8592;</div>
+            <div class="arrow right-arrow" onclick="nextImage()">&#8594;</div>
+        </div>
+
+        <div class="content-right">
+            <h2>Tide</h2>
+            <p>Handmade upon request. All prices include our custom wall mount.</p>
+            <p>All measurements exclude the wall mount. For total measurements add 10 cm to height and width.</p>
+            <p><strong>Delivery:</strong> Currently it is only possible to pick up at our studio in Frederiksberg, Denmark. Contact us at hello@kibun.dk if you wish to purchase a panel but need it shipped. Because our panels and wall mounts are handcrafted upon order with great care for detail, production may take up to six weeks.</p>
+            <p><strong>Care:</strong> Please note that the wool fabric is very sensitive to heat and humidity and can be damaged by water, ironing and steaming. For this reason it is also important to place the panels on a flat surface, and to not fold or crumble them.</p>
+            <button class="back-button">Back to Main Content</button>
+        </div>
+    </div>
+
+    <div class="new-content" id="new-content-2">
+    <h2>New Content 2</h2>
+        <div class="content-left">
+            <div class="image-container">
+                <img src="pic/HG.png" class="slide-image" alt="Image 1">
+                <img src="pic/hug_forg.png" class="slide-image" alt="Image 2">
+                <img src="pic/see_frog.png" class="slide-image" alt="Image 3">
+            </div>
+            <div class="arrow left-arrow" onclick="prevImage()">&#8592;</div>
+            <div class="arrow right-arrow" onclick="nextImage()">&#8594;</div>
+        </div>
+
+        <div class="content-right">
+            <h2>Tide</h2>
+            <p>Handmade upon request. All prices include our custom wall mount.</p>
+            <p>All measurements exclude the wall mount. For total measurements add 10 cm to height and width.</p>
+            <p><strong>Delivery:</strong> Currently it is only possible to pick up at our studio in Frederiksberg, Denmark. Contact us at hello@kibun.dk if you wish to purchase a panel but need it shipped. Because our panels and wall mounts are handcrafted upon order with great care for detail, production may take up to six weeks.</p>
+            <p><strong>Care:</strong> Please note that the wool fabric is very sensitive to heat and humidity and can be damaged by water, ironing and steaming. For this reason it is also important to place the panels on a flat surface, and to not fold or crumble them.</p>
+            <button class="back-button">Back to Main Content</button>
+        </div>
+    </div>
+
+    <div class="new-content" id="new-content-3">
+    <h2>New Content 3</h2>
+    <div class="content-left">
+        <div class="image-container">
+            <img src="pic/HG.png" class="slide-image" alt="Image 1">
+            <img src="pic/hug_forg.png" class="slide-image" alt="Image 2">
+            <img src="pic/see_frog.png" class="slide-image" alt="Image 3">
+        </div>
+        <div class="arrow left-arrow" onclick="prevImage()">&#8592;</div>
+        <div class="arrow right-arrow" onclick="nextImage()">&#8594;</div>
+    </div>
+
+    <div class="content-right">
+        <h2>Tide</h2>
+        <p>Handmade upon request. All prices include our custom wall mount.</p>
+        <p>All measurements exclude the wall mount. For total measurements add 10 cm to height and width.</p>
+        <p><strong>Delivery:</strong> Currently it is only possible to pick up at our studio in Frederiksberg, Denmark. Contact us at hello@kibun.dk if you wish to purchase a panel but need it shipped. Because our panels and wall mounts are handcrafted upon order with great care for detail, production may take up to six weeks.</p>
+        <p><strong>Care:</strong> Please note that the wool fabric is very sensitive to heat and humidity and can be damaged by water, ironing and steaming. For this reason it is also important to place the panels on a flat surface, and to not fold or crumble them.</p>
+        <button class="back-button">Back to Main Content</button>
+    </div>
+
+    </div>
+
+    <div class="new-content" id="new-content-4">
+    <h2>New Content 4</h2>
+     <div class="content-left">
+        <div class="image-container">
+            <img src="pic/HG.png" class="slide-image" alt="Image 1">
+            <img src="pic/hug_forg.png" class="slide-image" alt="Image 2">
+            <img src="pic/see_frog.png" class="slide-image" alt="Image 3">
+        </div>
+        <div class="arrow left-arrow" onclick="prevImage()">&#8592;</div>
+        <div class="arrow right-arrow" onclick="nextImage()">&#8594;</div>
+     </div>
+
+     <div class="content-right">
+        <h2>Tide</h2>
+        <p>Handmade upon request. All prices include our custom wall mount.</p>
+        <p>All measurements exclude the wall mount. For total measurements add 10 cm to height and width.</p>
+        <p><strong>Delivery:</strong> Currently it is only possible to pick up at our studio in Frederiksberg, Denmark. Contact us at hello@kibun.dk if you wish to purchase a panel but need it shipped. Because our panels and wall mounts are handcrafted upon order with great care for detail, production may take up to six weeks.</p>
+        <p><strong>Care:</strong> Please note that the wool fabric is very sensitive to heat and humidity and can be damaged by water, ironing and steaming. For this reason it is also important to place the panels on a flat surface, and to not fold or crumble them.</p>
+        <button class="back-button">Back to Main Content</button>
+     </div>
+
+    </div>
+</div>
+
+
+    <script src="G_main.js"></script>
+
+
+
+
+
+    </main>
+
+<div style="height: 400px;"></div>
+    
+</body>
+</html>
