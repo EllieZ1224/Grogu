@@ -1,3 +1,7 @@
+html, body {
+    overflow-x: hidden; /* 禁止页面横向滚动 */
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -20,7 +24,7 @@ header nav ul {
 }
 
 #logo-image {
-    width: 140px; /* 设置图片的宽度为100像素 */
+    width: 110px; /* 设置图片的宽度为100像素 */
     height: auto; /* 让图片的高度自动调整以保持比例 */
     margin-top: 0; /* 上外边距 */
     margin-bottom: 0; /* 下外边距 */
@@ -55,17 +59,22 @@ header nav ul li a {
     z-index: 1;
 }
 
+
+/*使用viewport单位（vw）来设置字体大小。根据视口宽度自动调整字体大小。*/
 .background-text {
-    font-size: 9em; /* Adjust font size as needed */
-    color: #e0e0e0; /* Lighter color for background text */
+    font-size: 12.4vw; /* 使用视口宽度单位 */
+    color: #e0e0e0; /* 较浅的背景文字颜色 */
     position: absolute;
-    top: 25%; /* Centered vertically */
-    left: 50%; /* Centered horizontally */
+    top: 25%;
+    left: 50%; /* 水平居中 */
     transform: translate(-50%, -50%);
     z-index: -1;
     font-weight: bold;
-    white-space: nowrap;
+    white-space: nowrap; /* 防止文本换行 */
+    overflow: hidden; /* 隐藏超出部分 */
+    text-align: center; /* 居中对齐 */
 }
+
 
 .showcase img {
     width: 410px; /* Adjusted width */
@@ -219,7 +228,7 @@ header nav ul li a {
 .sidebar {
     width: 30%;
     background-color: transparent;
-    padding: 20px;
+    padding: 50px;
     box-sizing: border-box;
     margin-right: 20px;
 }
@@ -261,7 +270,7 @@ header nav ul li a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
+    width: 60%;
     background-color: #e7e7e7;
     border-radius: 10% 0 0 10%;
     transition: opacity 1.5s ease-in-out, transform 1.5s ease-in-out; /* 添加过渡效果 */
@@ -269,6 +278,8 @@ header nav ul li a {
     transform: translateX(100%);
     overflow: hidden;
     cursor: pointer;
+    position: absolute; /* 添加绝对定位 */
+    right: 0; /* 右对齐 */
 }
 
 .main-content.active {
@@ -309,10 +320,11 @@ header nav ul li a {
     transform: translate(-50%, -50%);
     flex-direction: row;
     justify-content: space-between;
+    height: 100%; /* 使其填满整个高度 */
 }
 
 #new-content-container {
-    margin-top: 20px;
+    margin-top: 120px;
     position: relative;
 }
 
@@ -322,36 +334,61 @@ header nav ul li a {
     align-items: center;
     justify-content: center;
     position: relative;
+    justify-content: center;
 }
 
+/* 详情图片 */
 .image-container {
     position: relative;
-    width: 80%;
+    width: 75%;
+    height: auto; 
     overflow: hidden;
+    border-radius: 125%; /* 圆角 */
 }
 
 .slide-image {
     display: none;
     width: 100%;
-    transition: opacity 0.5s ease-in-out;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    clip-path: polygon(10% 0%, 90% 0%, 100% 90%, 0% 100%); /* 不规则形状 */
+}
+
+.slide-image.active {
+    opacity: 1; /* 使当前图片可见 */
+    z-index: 2; /* 确保当前图片在顶部 */
+}
+
+.slide-image.previous {
+    opacity: 0.5; /* 使上一张图片变淡 */
+    z-index: 1; /* 使上一张图片在当前图片之下 */
 }
 
 .arrow {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 2rem;
+    font-size: 1rem;
     cursor: pointer;
     z-index: 1002;
+    background-color: white; /* 圆圈背景色 */
+    border-radius: 50%; /* 圆形 */
+    width: 30px; /* 圆圈大小 */
+    height: 30px; /* 圆圈大小 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 5px rgba(136, 136, 136, 0.3); /* 添加阴影 */
+    border: 0.7px solid #ccc; /* 圆圈边框 */
 }
 
 .left-arrow {
-    left: 10px;
+    left: 20px;
 }
 
 .right-arrow {
-    right: 10px;
+    right: 20px;
 }
+
 
 .content-right {
     flex: 1;
@@ -366,17 +403,35 @@ header nav ul li a {
 }
 
 
-
 .detail {
     display: none; /* 初始状态下隐藏 */
     margin-bottom: 20px;
     width: 80%;
 }
 
+
+/*主图*/
+.main2-image {
+    max-width: 300px;
+    margin-right: 20px;
+    padding-top: 50px;
+    float: left; /* 将图片浮动到左边 */
+    border-radius: 30%; /* 设置图片四角弧度 */
+}
+
+
+/*副图*3*/
 .detail img {
-    max-width: 400px;
+    max-width: 300px;
     margin-right: 20px;
     float: left; /* 将图片浮动到左边 */
+    display: block;
+}
+
+
+.detail h2 {
+    padding-top: 50px;
+    padding-left: 20px;
 }
 
 .text-content {
@@ -387,7 +442,7 @@ header nav ul li a {
 .related-products {
     width: 80%;
     text-align: center;
-    margin-top: 340px; /* 添加一些顶部边距 */
+    margin-top: 90px; /* 添加一些顶部边距 */
 }
 
 .related-products img {

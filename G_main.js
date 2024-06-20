@@ -17,26 +17,46 @@ function showDetail(id) {
 }
 
 
-let currentIndex = 0;
-const images = document.querySelectorAll('.slide-image');
 
-function showImage(index) {
+//详情图片slideshow
+const currentIndexes = {
+    1: 0,
+    2: 0,
+    3: 0,
+    4: 0
+};
+
+function showImage(contentId, index) {
+    const images = document.querySelectorAll(`#content-left-${contentId} .slide-image`);
     images.forEach((img, i) => {
-        img.style.display = i === index ? 'block' : 'none';
+        if (i === index) {
+            img.style.display = 'block';
+            const randomAngle = Math.random() * 30 - 15; // 生成-15到15度之间的随机角度
+            img.style.transform = `rotate(${randomAngle}deg)`;
+        } else {
+            img.style.display = 'none';
+            img.style.transform = 'rotate(0deg)'; // 重置其他图片的旋转角度
+        }
     });
 }
 
-function nextImage() {
-    currentIndex = (currentIndex + 1) % images.length;
-    showImage(currentIndex);
+function nextImage(contentId) {
+    currentIndexes[contentId] = (currentIndexes[contentId] + 1) % document.querySelectorAll(`#content-left-${contentId} .slide-image`).length;
+    showImage(contentId, currentIndexes[contentId]);
 }
 
-function prevImage() {
-    currentIndex = (currentIndex - 1 + images.length) % images.length;
-    showImage(currentIndex);
+function prevImage(contentId) {
+    currentIndexes[contentId] = (currentIndexes[contentId] - 1 + document.querySelectorAll(`#content-left-${contentId} .slide-image`).length) % document.querySelectorAll(`#content-left-${contentId} .slide-image`).length;
+    showImage(contentId, currentIndexes[contentId]);
 }
 
-showImage(currentIndex);
+// 初始化显示第一张图片
+for (let contentId in currentIndexes) {
+    showImage(contentId, currentIndexes[contentId]);
+}
+
+
+
 
 function expandContent(event) {
     // 阻止点击事件冒泡，防止触发父元素的点击事件
@@ -56,7 +76,6 @@ function expandContent(event) {
     targetContent.style.display = 'flex'; // 变更为 flex
     setTimeout(() => {
         targetContent.style.opacity = '1';
-       // document.body.style.overflow = 'hidden'; // 禁用滚动
     }, 10);
 }
 
