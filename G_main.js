@@ -81,6 +81,17 @@ for (let contentId in currentIndexes) {
     showImage(contentId, currentIndexes[contentId]);
 }
 
+function startAutoSlide() {
+    for (let contentId in currentIndexes) {
+        setInterval(() => {
+            nextImage(contentId);
+        }, 2000); // 每3秒切换一张图片
+    }
+}
+
+// 启动自动轮播
+startAutoSlide();
+
 
 
 
@@ -152,3 +163,4 @@ document.getElementById('about-link').addEventListener('click', function(event) 
     mainContent.scrollIntoView({ behavior: 'smooth' });
 });
 
+//

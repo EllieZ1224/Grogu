@@ -364,14 +364,17 @@ header nav ul li a {
 }
 
 .slide-image.active {
+    display: block;
     opacity: 1; /* 使当前图片可见 */
     z-index: 2; /* 确保当前图片在顶部 */
 }
 
 .slide-image.previous {
+    display: block;
     opacity: 0.5; /* 使上一张图片变淡 */
     z-index: 1; /* 使上一张图片在当前图片之下 */
 }
+
 
 .arrow {
     position: absolute;
@@ -565,8 +568,9 @@ header nav ul li a {
 }
 
 .contact a:hover {
-    transform: rotate(1.2deg) scale(1.05);
+    transform: rotate(1.2deg) scale(1.1);
     transition: transform 0.2s;
+    color:rgb(30, 119, 30);
 }
 
 
