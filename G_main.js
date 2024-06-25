@@ -18,6 +18,32 @@ function showDetail(id) {
 
 
 
+//cilck Grogu's Collections
+
+document.getElementById('collections-link').addEventListener('click', function(event) {
+    event.preventDefault();
+
+    const mainContent = document.getElementById('main-content');
+    mainContent.classList.add('visible');
+
+    mainContent.scrollIntoView({ behavior: 'smooth' });
+});
+
+//cilck tags
+
+document.getElementById('tags-link').addEventListener('click', function(event) {
+    event.preventDefault();
+
+    const mainContent = document.getElementById('main-content');
+    mainContent.classList.add('visible');
+
+    mainContent.scrollIntoView({ behavior: 'smooth' });
+});
+
+
+
+
+
 //详情图片slideshow
 const currentIndexes = {
     1: 0,
@@ -83,7 +109,7 @@ document.querySelectorAll('.detail').forEach(detail => {
     detail.addEventListener('click', expandContent);
 });
 
-document.querySelectorAll('.back-button').forEach(button => {
+document.querySelectorAll('.custom-button').forEach(button => {
     button.addEventListener('click', (event) => {
         event.stopPropagation();
 
@@ -100,3 +126,29 @@ document.querySelectorAll('.back-button').forEach(button => {
         mainContent.scrollIntoView({ behavior: 'smooth' }); // 滚动到主内容
     });
 });
+
+
+window.addEventListener('scroll', function() {
+    var footer = document.getElementById('footer');
+    if ((window.innerHeight + window.pageYOffset) >= document.documentElement.scrollHeight) {
+        footer.classList.add('visible');
+    } else {
+        footer.classList.remove('visible');
+    }
+});
+
+
+
+
+
+//cilck about
+
+document.getElementById('about-link').addEventListener('click', function(event) {
+    event.preventDefault();
+
+    const mainContent = document.getElementById('f-container');
+    mainContent.classList.add('visible');
+
+    mainContent.scrollIntoView({ behavior: 'smooth' });
+});
+

@@ -134,13 +134,14 @@ header nav ul li a {
 .navigation a {
     text-decoration: none;
     color: #000;
-    font-size: 1em;
+    font-family: 'optima', 'serif';
+    font-size: clamp(10px, 1.4vw, 20px);
     transition: background-color 0.4s ease, font-size 0.4s ease, font-weight 0.4s ease; /* Added font-size and font-weight transition */
 }
 
 .navigation a:hover {
     color: #333;
-    font-size: 1.4em; /* Increase font size */
+    font-size: clamp(10px, 1.8vw, 26px); /* Increase font size */
     font-weight: bold; /* Make the font bold */
 }
 
@@ -157,10 +158,13 @@ header nav ul li a {
     border-radius: 20px;
     padding: 0.5em 1em;
     margin: 0.1em;
-    font-size: 0.9em;
+    font-size: clamp(9px, 1.3vw, 14px);
     cursor: pointer;
     transition: background-color 0.3s ease;
     transform: rotate(calc(var(--rotate, 0deg)));
+    font-family: Arial;
+    gap: -10px;
+    font-family: 'optima', 'serif';
 }
 
 .tags button:nth-child(1) {
@@ -219,10 +223,9 @@ header nav ul li a {
     height: auto;
     background-color: #f4f4f4;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
     margin-left: 30px;
     margin-top: 20px;
-    padding: 50px;
+    padding: 30px;
 }
 
 .sidebar {
@@ -231,18 +234,23 @@ header nav ul li a {
     padding: 50px;
     box-sizing: border-box;
     margin-right: 20px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: clamp(15px, 1.8vw, 26px); 
+
 }
 
 .item {
     display: flex;
     align-items: center;
-    padding: 15px;
+    padding: 25px;
     margin: 20px 0;
     background-color: #fff;
     border-radius: 25px;
     cursor: pointer;
     text-align: center;
+    white-space: nowrap;
     transition: background-color 0.3s ease;
+    min-width: 175px;
 }
 
 .item img {
@@ -253,10 +261,11 @@ header nav ul li a {
 }
 
 .item p {
-    margin: 20px;
-    font-size: 14px;
+    margin: 15px;
+    font-size: 1.1vw;
     color: #333;
     font-weight: bold;
+
 }
 
 .item:hover {
@@ -270,10 +279,10 @@ header nav ul li a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 60%;
+    width: 63%;
     background-color: #e7e7e7;
     border-radius: 10% 0 0 10%;
-    transition: opacity 1.5s ease-in-out, transform 1.5s ease-in-out; /* 添加过渡效果 */
+    transition: opacity 1.5s ease-in-out, transform 1s ease-in-out; /* 添加过渡效果 */
     opacity: 0;
     transform: translateX(100%);
     overflow: hidden;
@@ -337,6 +346,7 @@ header nav ul li a {
     justify-content: center;
 }
 
+
 /* 详情图片 */
 .image-container {
     position: relative;
@@ -395,13 +405,46 @@ header nav ul li a {
     padding: 20px;
 }
 
-.back-button {
-    margin-top: 20px;
+.content-right h2 {
+    padding-top: 20px;
+    font-size: 45px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+}
+
+.content-right p {
+    padding-top: 10px;
+    font-size: 1.4vw;
+    font-family: 'optima', 'serif';
+    
+}
+
+
+.custom-button {
+    display: flex;
+    align-items: center;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
     padding: 10px 20px;
     font-size: 1rem;
     cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    letter-spacing: 0.05em; /* 调整字母间距 */
 }
 
+.custom-button:hover {
+    background-color: #938f8f;
+}
+
+
+.fixed-bottom-right {
+    position: fixed;
+    bottom: 20px; /* 调整距离底部的距离 */
+    right: 20px; /* 调整距离左侧的距离 */
+}
 
 .detail {
     display: none; /* 初始状态下隐藏 */
@@ -414,43 +457,160 @@ header nav ul li a {
 .main2-image {
     max-width: 300px;
     margin-right: 20px;
-    padding-top: 50px;
+    padding-top: 10px;
+    margin-top: 80px;
     float: left; /* 将图片浮动到左边 */
     border-radius: 30%; /* 设置图片四角弧度 */
 }
 
 
-/*副图*3*/
-.detail img {
-    max-width: 300px;
-    margin-right: 20px;
-    float: left; /* 将图片浮动到左边 */
-    display: block;
-}
-
-
-.detail h2 {
-    padding-top: 50px;
-    padding-left: 20px;
-}
-
 .text-content {
-    max-width: 400px;
+    text-align: left; /* 调整文字对齐 */
+    padding-left: 40px;
+    max-width: 300px;
     overflow: hidden; /* 清除浮动 */
+    font-family: 'optima', 'serif';
 }
+
+.text-content h2 {
+    padding-top: 30px;
+    font-size: 2.5vw;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.text-content p {
+    font-size: 1.3vw;
+    font-family: 'optima', 'serif';
+}
+
+
 
 .related-products {
-    width: 80%;
+    background-color: #f0f0f0; /* 设置底色 */
+    padding: 15px; /* 添加内边距 */
+    border-radius: 40px; /* 添加圆角，可选 */
+    margin-top: 30px; /* 添加外边距以与上方内容分开 */
     text-align: center;
-    margin-top: 90px; /* 添加一些顶部边距 */
-}
-
-.related-products img {
-    display: block;
-    max-width: 100px;
-    margin: 10px;
 }
 
 .detail.active {
     display: block; /* 当有.active类时，显示为block */
 }
+
+.related-products h3 {
+    margin-top: 2px; /* 去除顶部外边距 */
+    margin-bottom: 10px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    letter-spacing: 0.03em; /* 调整字母间距 */
+}
+
+.related-images {
+    display: flex;
+    gap: 15px; /* 图片之间的间距 */
+    justify-content: center; 
+}
+
+/*副图*3*/
+.related-products img {
+    width: 75px;
+    margin-right: 20px;
+    float: right; /* 将图片浮动到左边 */
+    display: block;
+}
+
+
+
+
+/*about*/
+.f-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 155px;
+    padding-top: 0;
+    padding-left: 60px;
+    padding-right: 60px;
+    padding-bottom: 60px;
+    font-family: 'optima', 'serif';
+    color: #333;
+    margin-bottom: 20px;
+}
+
+
+.description {
+    width: 60%;
+}
+
+.contact {
+    width: 35%;
+    text-align: right;
+}
+
+.description p, .contact p {
+    margin: 0 0 10px;
+    font-family: 'optima', 'serif';
+    font-size: 1.5vw;
+}
+
+.description .small-text {
+    font-size: 1.1vw; /* 调整缩小的字体大小 */
+}
+
+.contact a {
+    display: block;
+    margin: 5px 0;
+    color: #333;
+    text-decoration: none;
+    font-family: 'optima', 'serif';
+    font-size: 1.1vw;
+}
+
+.contact a:hover {
+    transform: rotate(1.2deg) scale(1.05);
+    transition: transform 0.2s;
+}
+
+
+.gray-link {
+    color: gray;
+}
+
+
+
+
+/*footer*/
+
+.custom-footer {
+    width: 100%; /* 确保 footer 充满宽度 */
+    padding: 0;
+    margin: 0;
+    position: fixed; /* 或者 fixed */
+    bottom: 0;
+    opacity: 0; /* 初始透明度为 0 */
+    transform: translateY(20px); /* 初始向下移动 */
+    visibility: hidden; /* 初始状态隐藏 */
+    transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out, visibility 0s 0.5s; /* 添加过渡效果 */
+}
+
+.custom-footer.visible {
+    opacity: 1; /* 不透明 */
+    transform: translateY(0); /* 重置变换 */
+    visibility: visible; /* 使其可见 */
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out; /* 显示时的过渡 */
+}
+
+.custom-footer .footer-text {
+    font-size: 28.4vw;
+    font-family: 'Arial', sans-serif;
+    color: #e0e0e0;
+    font-weight: bold;
+    white-space: nowrap; /* 防止文本换行 */
+    overflow: hidden; /* 隐藏超出部分 */
+    text-align: center; /* 居中对齐 */
+    position: absolute;
+    top: 50%; /* 确保文本垂直居中 */
+    left: 50%;
+    transform: translate(-50%, -70%); /* 水平和垂直居中 */
+    margin: 0;
+}
+
+
